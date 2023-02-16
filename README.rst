@@ -34,10 +34,16 @@ nicefitbro
 ==========
 
 
-    Add a short description here!
+    A regression modeling service
 
 
-A longer description of your project goes here...
+1. Data import and preprocessing (in-progress): The service allows the user to import data from various sources, such as CSV, Excel, or databases, and perform basic preprocessing tasks such as missing value imputation, outlier detection and removal, and feature scaling.
+
+2. Feature selection and engineering (in-progress): The service provides options for feature selection, such as eliminating highly correlated features, and feature engineering, such as creating new features from existing ones, or transforming existing features.
+
+3. Model selection and hyperparameter tuning (in-progress): The service provides options for selecting regression models, such as linear regression, decision trees, random forests, support vector regression, and neural networks. It should also provide an option to tune hyperparameters of the models to optimize performance.
+
+4. Model evaluation (not implemented): The service provides metrics to evaluate the performance of the trained models, such as mean absolute error, mean squared error, R-squared, and others. It should also provide visualizations to help interpret the results, such as residual plots, feature importance plots, and partial dependence plots.
 
 
 .. _pyscaffold-notes:
