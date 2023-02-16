@@ -34,8 +34,6 @@ nicefitbro
 ==========
 
 
-    A regression modeling service
-
 
 
 
