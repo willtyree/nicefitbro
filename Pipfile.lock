@@ -616,7 +616,7 @@
         },
         "nicefitbro": {
             "path": ".",
-            "version": "==0.0.post1.dev7+g984a578.d20230216"
+            "version": "==0.0.post1.dev8+g42d134a.d20230216"
         },
         "numba": {
             "hashes": [

@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 from sklearn.neighbors import LocalOutlierFactor
+from nicefitbro.data_prep.preprocess.preprocessor_abc import DataPreprocessor
 
 class OutlierDetector(DataPreprocessor):
     """
