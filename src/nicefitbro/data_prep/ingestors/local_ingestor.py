@@ -1,5 +1,6 @@
 import pandas as pd
-from nicefitbro.data_prep.ingestors.ingestors_abc import DataIngestor
+from nicefitbro.data_prep.ingestors.ingestor_abc import DataIngestor
+
 
 class LocalFileIngestor(DataIngestor):
     """
