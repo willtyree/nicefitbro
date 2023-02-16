@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from scipy import stats
-from nicefitbro.data_prep.preprocess.preprocessor_abc import DataPreprocessor
+from nicefitbro.preprocess.preprocessor_abc import DataPreprocessor
 
 
 class MissingValuePreprocessor(DataPreprocessor):

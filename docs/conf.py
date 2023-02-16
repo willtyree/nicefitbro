@@ -20,12 +20,10 @@ __location__ = os.path.dirname(__file__)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.join(__location__, "../src"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/"))
-sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/feature_engineering/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/ingestors/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/pipeliners/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/preprocess/"))
-sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/evaluate/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/factory/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/select/"))
@@ -156,7 +154,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", ".venv"]
 pygments_style = "sphinx"
 
 # A list of ignored prefixes for module index sorting.
-# modindex_common_prefix = []
+modindex_common_prefix = ["nicefitbro"]
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
 # keep_warnings = False
@@ -194,7 +192,7 @@ html_theme_options = {
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-# html_logo = ""
+html_logo = "_static/icon.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32

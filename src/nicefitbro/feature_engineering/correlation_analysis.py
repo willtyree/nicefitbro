@@ -1,4 +1,4 @@
-from nicefitbro.data_prep.feature_engineering.feature_engineering_abc import (
+from nicefitbro.feature_engineering.feature_engineering_abc import (
     FeatureEngineering,
 )
 

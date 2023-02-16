@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 from sklearn.preprocessing import PolynomialFeatures
-from nicefitbro.data_prep.feature_engineering.feature_engineering_abc import (
+from nicefitbro.feature_engineering.feature_engineering_abc import (
     FeatureEngineering,
 )
 

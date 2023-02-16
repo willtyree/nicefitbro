@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
-from nicefitbro.data_prep.feature_engineering.feature_engineering_abc import (
+from nicefitbro.feature_engineering.feature_engineering_abc import (
     FeatureEngineering,
 )
 

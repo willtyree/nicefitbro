@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.svm import SVR
 from sklearn.linear_model import LassoCV
 from sklearn.feature_selection import SelectKBest, RFE, f_regression
-from nicefitbro.data_prep.feature_engineering.feature_engineering_abc import (
+from nicefitbro.feature_engineering.feature_engineering_abc import (
     FeatureEngineering,
 )
 

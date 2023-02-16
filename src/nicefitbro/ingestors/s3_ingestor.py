@@ -1,6 +1,6 @@
 import pandas as pd
 from io import StringIO
-from nicefitbro.data_prep.ingestors.ingestors_abc import DataIngestor
+from nicefitbro.ingestors.ingestor_abc import DataIngestor
 
 
 class S3Ingestor(DataIngestor):
