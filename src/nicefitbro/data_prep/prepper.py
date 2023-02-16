@@ -26,7 +26,7 @@ class DataPrepper:
         self.target = target
         
     def load_and_preprocess_data(self, source):
-        data = self.importer.import_data(source)
+        data = self.importer.ingest_data(source)
         preprocessed_data = self.preprocessor.preprocess_data(data)
         engineered_data = self.engineer.engineer_features(preprocessed_data, self.target)
         return engineered_data

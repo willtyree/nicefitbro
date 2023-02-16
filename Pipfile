@@ -8,7 +8,7 @@ scikit-learn = "*"
 mlflow = "*"
 xgboost = "*"
 shap = "*"
-nicefitbro = {path = "."}
+nicefitbro = {editable = true, path = "."}
 
 [dev-packages]
 black = "*"

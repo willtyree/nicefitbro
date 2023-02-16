@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "679e40d7757b4a181d508670fe361630de564ceb3e9615f8b1af62b98d87af21"
+            "sha256": "9f564e564c82b5de898826579afd4dc98a58c0944a10fa8d3eba25f7d5618095"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -615,8 +615,8 @@
             "version": "==2.1.1"
         },
         "nicefitbro": {
-            "path": ".",
-            "version": "==0.0.post1.dev8+g42d134a.d20230216"
+            "editable": true,
+            "path": "."
         },
         "numba": {
             "hashes": [

@@ -43,8 +43,10 @@ class FeatureTransformer(FeatureEngineering):
         ft_transform_df = pd.DataFrame(features_transformed, columns=poly.get_feature_names_out(features))
         
         for col in ft_transform_df.columns:
-            if col in data.columns:
-                ft_transform_df.drop(columns=[col], axis=1, inplace=True)
+            #if col in data.columns:
+            if col not in data.columns:
+                data[col] = ft_transform_df[col]
+                #ft_transform_df.drop(columns=[col], axis=1, inplace=True)
                 
         if "1" in ft_transform_df.columns:
             ft_transform_df.drop(columns=["1"], axis=1, inplace=True)
