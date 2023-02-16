@@ -2,18 +2,20 @@ import pandas as pd
 from sklearn.svm import SVR
 from sklearn.linear_model import LassoCV
 from sklearn.feature_selection import SelectKBest, RFE, f_regression
-from nicefitbro.data_prep.feature_engineering.feature_engineering_abc import FeatureEngineering
+from nicefitbro.data_prep.feature_engineering.feature_engineering_abc import (
+    FeatureEngineering,
+)
 
 
 class FeatureSelection(FeatureEngineering):
     """
     Concrete implementation of the FeatureEngineering abstract class for selecting features using various algorithms.
-    
+
     This class implements the select_features method for selecting features using the following algorithms:
         - SelectKBest
         - Recursive Feature Elimination (RFE)
         - Lasso Regression
-        
+
     Attributes:
         model (sklearn estimator): Sklearn estimator to use for feature selection.
         k (int): Number of features to keep in SelectKBest algorithm.
@@ -23,7 +25,7 @@ class FeatureSelection(FeatureEngineering):
             'rfe': Use Recursive Feature Elimination (RFE) algorithm.
             'lasso': Use Lasso Regression algorithm.
             'manual': Manually select the columns given a list
-        
+
     Methods:
         engineer_features(data, target):
             Selects the most relevant features from the data using the specified feature selection algorithm.
@@ -31,7 +33,8 @@ class FeatureSelection(FeatureEngineering):
             - target: pandas Series containing the target variable.
             Returns: pandas DataFrame with the selected features.
     """
-    def __init__(self, k=15, threshold=0.5, method='select_k_best'):
+
+    def __init__(self, k=15, threshold=0.5, method="select_k_best"):
         self.k = k
         self.threshold = threshold
         self.method = method
@@ -57,7 +60,7 @@ class FeatureSelection(FeatureEngineering):
             raise Exception
 
         return data[[target] + features]
-        
+
     def select_features_select_k_best(self, data, target):
         feature_df = data.drop(columns=[target])
         target_df = data[target]
@@ -66,7 +69,7 @@ class FeatureSelection(FeatureEngineering):
         mask = selector.get_support()
         selected_features = feature_df.columns[mask]
         return data[selected_features]
-    
+
     def select_features_rfe(self, data, target):
         """
         warning: takes a while to compute
@@ -79,7 +82,7 @@ class FeatureSelection(FeatureEngineering):
         mask = selector.support_
         selected_features = feature_df.columns[mask]
         return data[selected_features]
-    
+
     def select_features_lasso(self, data, target):
         feature_df = data.drop(columns=[target])
         target_df = data[target]
@@ -88,15 +91,17 @@ class FeatureSelection(FeatureEngineering):
         mask = selector.coef_ != 0
         selected_features = feature_df.columns[mask]
         return data[selected_features]
-    
+
     def engineer_features(self, data, target, features=None):
-        if self.method == 'select_k_best':
+        if self.method == "select_k_best":
             return self.select_features_select_k_best(data, target)
-        elif self.method == 'rfe':
+        elif self.method == "rfe":
             return self.select_features_rfe(data, target)
-        elif self.method == 'lasso':
+        elif self.method == "lasso":
             return self.select_features_lasso(data, target)
-        elif self.method == 'manual':
+        elif self.method == "manual":
             return self.manual_selection(data, features, target)
         else:
-            raise ValueError("Invalid method for feature selection. Choose 'select_k_best', 'rfe', 'lasso', or 'manual'.")
+            raise ValueError(
+                "Invalid method for feature selection. Choose 'select_k_best', 'rfe', 'lasso', or 'manual'."
+            )
