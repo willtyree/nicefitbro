@@ -19,6 +19,17 @@ __location__ = os.path.dirname(__file__)
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.join(__location__, "../src"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/feature_engineering/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/ingestors/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/pipeliners/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/preprocess/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/evaluate/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/factory/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/select/"))
+sys.path.append(os.path.join(__location__, "../src/nicefitbro/models/tune/"))
 
 # -- Run sphinx-apidoc -------------------------------------------------------
 # This hack is necessary since RTD does not issue `sphinx-apidoc` before running
@@ -62,6 +73,9 @@ except Exception as e:
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
+    "numpydoc",
+    "sphinx_panels",
+    "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
@@ -76,6 +90,8 @@ extensions = [
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
+
+autosummary_generate = True
 
 # The suffix of source filenames.
 source_suffix = ".rst"
@@ -146,20 +162,26 @@ pygments_style = "sphinx"
 # keep_warnings = False
 
 # If this is True, todo emits a warning for each TODO entries. The default is False.
-todo_emit_warnings = True
+todo_emit_warnings = False
 
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = "alabaster"
+html_theme = "pydata_sphinx_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-html_theme_options = {"sidebar_width": "300px", "page_width": "1200px"}
-
+html_theme_options = {
+    "github_url": "https://github.com/willtyree/nicefitbro",
+    "logo": {
+        "image_light": "https://github.com/willtyree/nicefitbro/tree/main/docs/_static/icon.png",
+        "image_dark": "https://github.com/willtyree/nicefitbro/tree/main/docs/_static/icon.png",
+    },
+    "navbar_end": ["theme-switcher", "navbar-icon-links"],
+}
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
 
