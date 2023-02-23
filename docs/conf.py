@@ -20,7 +20,9 @@ __location__ = os.path.dirname(__file__)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.join(__location__, "../src"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/"))
-sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/feature_engineering/"))
+sys.path.append(
+    os.path.join(__location__, "../src/nicefitbro/data_prep/feature_engineering/")
+)
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/ingestors/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/pipeliners/"))
 sys.path.append(os.path.join(__location__, "../src/nicefitbro/data_prep/preprocess/"))

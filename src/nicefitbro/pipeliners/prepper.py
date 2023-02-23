@@ -21,7 +21,7 @@ class DataPrepper:
             Returns: pandas DataFrame containing the preprocessed data.
     """
 
-    def __init__(self, importer, preprocessor, engineer, target):
+    def __init__(self, importer, target, preprocessor=None, engineer=None):
         self.importer = importer
         self.preprocessor = preprocessor
         self.engineer = engineer
@@ -29,11 +29,16 @@ class DataPrepper:
 
     def load_and_preprocess_data(self, source):
         data = self.importer.ingest_data(source)
-        preprocessed_data = self.preprocessor.preprocess_data(data)
-        engineered_data = self.engineer.engineer_features(
-            preprocessed_data, self.target
-        )
-        return engineered_data
+        if self.preprocessor:
+            preprocessed_data = self.preprocessor.preprocess_data(data)
+
+            if self.engineer:
+                engineered_data = self.engineer.engineer_features(
+                    preprocessed_data, self.target
+                )
+                return engineered_data
+            return preprocessed_data
+        return data
 
 
 # Wrap the DataPrepper class in a mlflow.pyfunc object
